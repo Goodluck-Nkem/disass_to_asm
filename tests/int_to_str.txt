@@ -1,0 +1,29 @@
+(gdb) disass int_to_str 
+Dump of assembler code for function int_to_str:
+   0x0000555555555380 <+0>:     endbr64 
+   0x0000555555555384 <+4>:     cmp    $0xb,%esi
+   0x0000555555555387 <+7>:     jbe    0x5555555553ba <int_to_str+58>
+   0x0000555555555389 <+9>:     push   %r12
+   0x000055555555538b <+11>:    push   %rbp
+   0x000055555555538c <+12>:    push   %rbx
+   0x000055555555538d <+13>:    mov    %rdi,%r12
+   0x0000555555555390 <+16>:    mov    %esi,%ebx
+   0x0000555555555392 <+18>:    mov    %edx,%ebp
+   0x0000555555555394 <+20>:    mov    %edx,%edi
+   0x0000555555555396 <+22>:    call   0x5555555551e9 <abs_u32>
+   0x000055555555539b <+27>:    mov    %eax,%edx
+   0x000055555555539d <+29>:    mov    %ebx,%esi
+   0x000055555555539f <+31>:    mov    %r12,%rdi
+   0x00005555555553a2 <+34>:    call   0x5555555552fe <word_to_str>
+   0x00005555555553a7 <+39>:    test   %ebp,%ebp
+   0x00005555555553a9 <+41>:    js     0x5555555553b0 <int_to_str+48>
+   0x00005555555553ab <+43>:    pop    %rbx
+   0x00005555555553ac <+44>:    pop    %rbp
+   0x00005555555553ad <+45>:    pop    %r12
+   0x00005555555553af <+47>:    ret    
+   0x00005555555553b0 <+48>:    movb   $0x2d,-0x1(%rax)
+   0x00005555555553b4 <+52>:    lea    -0x1(%rax),%rax
+   0x00005555555553b8 <+56>:    jmp    0x5555555553ab <int_to_str+43>
+   0x00005555555553ba <+58>:    mov    $0x0,%eax
+   0x00005555555553bf <+63>:    ret    
+End of assembler dump.

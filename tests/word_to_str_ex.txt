@@ -1,0 +1,24 @@
+(gdb) disass word_to_str_ex
+Dump of assembler code for function word_to_str_ex:
+   0x0000555555555347 <+0>:     endbr64 
+   0x000055555555534b <+4>:     mov    %ecx,%eax
+   0x000055555555534d <+6>:     shr    $0x6,%al
+   0x0000555555555350 <+9>:     lea    -0x1(%rax),%r8d
+   0x0000555555555354 <+13>:    cmp    $0x1,%r8b
+   0x0000555555555358 <+17>:    jbe    0x555555555368 <word_to_str_ex+33>
+   0x000055555555535a <+19>:    cmp    $0x3,%al
+   0x000055555555535c <+21>:    je     0x555555555371 <word_to_str_ex+42>
+   0x000055555555535e <+23>:    test   %al,%al
+   0x0000555555555360 <+25>:    je     0x55555555537a <word_to_str_ex+51>
+   0x0000555555555362 <+27>:    mov    $0x0,%eax
+   0x0000555555555367 <+32>:    ret    
+   0x0000555555555368 <+33>:    movzbl %cl,%ecx
+   0x000055555555536b <+36>:    call   0x55555555520f <hex_to_str>
+   0x0000555555555370 <+41>:    ret    
+   0x0000555555555371 <+42>:    movzbl %cl,%ecx
+   0x0000555555555374 <+45>:    call   0x5555555552a7 <bin_to_str>
+   0x0000555555555379 <+50>:    ret    
+   0x000055555555537a <+51>:    call   0x5555555552fe <word_to_str>
+   0x000055555555537f <+56>:    ret    
+End of assembler dump.
+(gdb) 

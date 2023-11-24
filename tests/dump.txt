@@ -1,0 +1,145 @@
+
+tests/int_word.o:     file format elf64-x86-64
+
+
+Disassembly of section .text.int_to_str:
+
+0000000000000000 <int_to_str>:
+   0:	f3 0f 1e fa          	endbr64 
+
+0000000000000004 <int_to_str_4>:
+   4:	83 fe 0b             	cmp    $0xb,%esi
+
+0000000000000007 <int_to_str_7>:
+   7:	76 31                	jbe    3a <int_to_str_58>
+
+0000000000000009 <int_to_str_9>:
+   9:	41 54                	push   %r12
+
+000000000000000b <int_to_str_11>:
+   b:	55                   	push   %rbp
+
+000000000000000c <int_to_str_12>:
+   c:	53                   	push   %rbx
+
+000000000000000d <int_to_str_13>:
+   d:	49 89 fc             	mov    %rdi,%r12
+
+0000000000000010 <int_to_str_16>:
+  10:	89 f3                	mov    %esi,%ebx
+
+0000000000000012 <int_to_str_18>:
+  12:	89 d5                	mov    %edx,%ebp
+
+0000000000000014 <int_to_str_20>:
+  14:	89 d7                	mov    %edx,%edi
+
+0000000000000016 <int_to_str_22>:
+  16:	e8 00 00 00 00       	call   1b <int_to_str_27>
+
+000000000000001b <int_to_str_27>:
+  1b:	89 c2                	mov    %eax,%edx
+
+000000000000001d <int_to_str_29>:
+  1d:	89 de                	mov    %ebx,%esi
+
+000000000000001f <int_to_str_31>:
+  1f:	4c 89 e7             	mov    %r12,%rdi
+
+0000000000000022 <int_to_str_34>:
+  22:	e8 00 00 00 00       	call   27 <int_to_str_39>
+
+0000000000000027 <int_to_str_39>:
+  27:	85 ed                	test   %ebp,%ebp
+
+0000000000000029 <int_to_str_41>:
+  29:	78 05                	js     30 <int_to_str_48>
+
+000000000000002b <int_to_str_43>:
+  2b:	5b                   	pop    %rbx
+
+000000000000002c <int_to_str_44>:
+  2c:	5d                   	pop    %rbp
+
+000000000000002d <int_to_str_45>:
+  2d:	41 5c                	pop    %r12
+
+000000000000002f <int_to_str_47>:
+  2f:	c3                   	ret    
+
+0000000000000030 <int_to_str_48>:
+  30:	c6 40 ff 2d          	movb   $0x2d,-0x1(%rax)
+
+0000000000000034 <int_to_str_52>:
+  34:	48 8d 40 ff          	lea    -0x1(%rax),%rax
+
+0000000000000038 <int_to_str_56>:
+  38:	eb f1                	jmp    2b <int_to_str_43>
+
+000000000000003a <int_to_str_58>:
+  3a:	b8 00 00 00 00       	mov    $0x0,%eax
+
+000000000000003f <int_to_str_63>:
+  3f:	c3                   	ret    
+
+Disassembly of section .text.word_to_str_ex:
+
+0000000000000000 <word_to_str_ex>:
+   0:	f3 0f 1e fa          	endbr64 
+
+0000000000000004 <word_to_str_ex_4>:
+   4:	89 c8                	mov    %ecx,%eax
+
+0000000000000006 <word_to_str_ex_6>:
+   6:	c0 e8 06             	shr    $0x6,%al
+
+0000000000000009 <word_to_str_ex_9>:
+   9:	44 8d 40 ff          	lea    -0x1(%rax),%r8d
+
+000000000000000d <word_to_str_ex_13>:
+   d:	41 80 f8 01          	cmp    $0x1,%r8b
+
+0000000000000011 <word_to_str_ex_17>:
+  11:	76 0e                	jbe    21 <word_to_str_ex_33>
+
+0000000000000013 <word_to_str_ex_19>:
+  13:	3c 03                	cmp    $0x3,%al
+
+0000000000000015 <word_to_str_ex_21>:
+  15:	74 13                	je     2a <word_to_str_ex_42>
+
+0000000000000017 <word_to_str_ex_23>:
+  17:	84 c0                	test   %al,%al
+
+0000000000000019 <word_to_str_ex_25>:
+  19:	74 18                	je     33 <word_to_str_ex_51>
+
+000000000000001b <word_to_str_ex_27>:
+  1b:	b8 00 00 00 00       	mov    $0x0,%eax
+
+0000000000000020 <word_to_str_ex_32>:
+  20:	c3                   	ret    
+
+0000000000000021 <word_to_str_ex_33>:
+  21:	0f b6 c9             	movzbl %cl,%ecx
+
+0000000000000024 <word_to_str_ex_36>:
+  24:	e8 00 00 00 00       	call   29 <word_to_str_ex_41>
+
+0000000000000029 <word_to_str_ex_41>:
+  29:	c3                   	ret    
+
+000000000000002a <word_to_str_ex_42>:
+  2a:	0f b6 c9             	movzbl %cl,%ecx
+
+000000000000002d <word_to_str_ex_45>:
+  2d:	e8 00 00 00 00       	call   32 <word_to_str_ex_50>
+
+0000000000000032 <word_to_str_ex_50>:
+  32:	c3                   	ret    
+
+0000000000000033 <word_to_str_ex_51>:
+  33:	e8 00 00 00 00       	call   38 <word_to_str_ex_56>
+
+0000000000000038 <word_to_str_ex_56>:
+  38:	c3                   	ret    
